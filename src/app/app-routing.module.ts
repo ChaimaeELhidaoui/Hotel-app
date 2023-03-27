@@ -14,7 +14,11 @@ const routes: Routes = [
   {
     path: 'inscription',
     loadChildren: () => import('./pages/inscription/inscription.module').then( m => m.InscriptionPageModule)
+  },  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
+
 ];
 
 @NgModule({
