@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
+import { NgModule, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -17,4 +17,13 @@ import { InscriptionPage } from './inscription.page';
   ],
   declarations: [InscriptionPage]
 })
-export class InscriptionPageModule {}
+export class InscriptionPageModule implements OnInit {
+
+
+  constructor(){}
+
+  ngOnInit(): void {
+ }
+
+
+}

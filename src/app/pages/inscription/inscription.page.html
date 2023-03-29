@@ -3,17 +3,18 @@
   <div class="contenu">
 <ion-img class="logo" src="../../../assets/login.jpg"/>
 <h3 class="titre">Let's get started with registration</h3>
+<form #myForm="ngForm" (submit)="onSubmit()">
 <ion-list class="list">
-
-    <ion-label class='label'>First Name</ion-label>
-    <ion-input class="input" placeholder=" Enter your first name" type="text"></ion-input>
-    <ion-label class='label'>Last Name</ion-label>
-    <ion-input class="input" placeholder=" Enter your last name"></ion-input>
-    <ion-label class='label'>Email</ion-label>
-    <ion-input class="input" placeholder=" Enter your Email"></ion-input>
-    <ion-label class='label'>Password</ion-label>
-    <ion-input class="input" placeholder=" Enter password"></ion-input>
-    <button>Sign Up</button>
+    <ion-label class='label' for="firstname">First Name</ion-label>
+    <ion-input type="text"  class="input" name="firstname" placeholder=" Enter your first name" id="firstname" [(ngModel)]="user.firstname" required></ion-input>
+    <ion-label class='label' for='lastname'>Last name</ion-label>
+    <ion-input type="text"  class="input" name="lastname" placeholder=" Enter your last name" id="lastname" [(ngModel)]="user.lastname" required></ion-input>
+    <ion-label class='label' for="email" >Email</ion-label>
+    <ion-input type="email" class="input" name="email" placeholder=" Enter your Email" id="email" [(ngModel)]="user.email" required></ion-input>
+    <ion-label class='label' for="password">Password</ion-label>
+    <ion-input type="text"  class="input" name="password" placeholder=" Enter password" id="password" [(ngModel)]="user.password" required></ion-input>
+    <button type="submit" [disabled]="myForm.invalid">Sign Up</button>
 </ion-list>
+</form>
 </div>
 </ion-content>

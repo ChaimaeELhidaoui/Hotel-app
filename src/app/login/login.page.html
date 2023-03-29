@@ -4,17 +4,17 @@
 <ion-img class="logo" src="../../../assets/login.jpg"/>
 
 <h3 class="titre">Login to continue</h3>
+<form #myForm="ngForm" (submit)="onConnexion()">
 <ion-list class="list">
-
-
-    <ion-label class='label'>Email</ion-label>
-    <ion-input class="input" placeholder=" Enter your Email"></ion-input>
+   <ion-label class='label'>Email</ion-label>
+    <ion-input type="email" class="input" name="email" placeholder=" Enter your Email" id="email" [(ngModel)]="user.email" required></ion-input>
     <ion-label class='label'>Password</ion-label>
-    <ion-input class="input" placeholder=" Enter password"></ion-input>
-    <button>Login</button>
+    <ion-input type="text"  class="input" name="password" placeholder=" Enter password" id="password" [(ngModel)]="user.password" required></ion-input>
+    <button type="submit" [disabled]="myForm.invalid">Login</button>
     <h3 class="titre">You don't have an account</h3>
-    <button routerLink="/inscription">Register</button>
+    <button  routerLink="/inscription" >Register</button>
 
 </ion-list>
+</form>
 </div>
 </ion-content>
