@@ -7,9 +7,12 @@
 <form #myForm="ngForm" (submit)="onConnexion()">
 <ion-list class="list">
    <ion-label class='label'>Email</ion-label>
-    <ion-input type="email" class="input" name="email" placeholder=" Enter your Email" id="email" [(ngModel)]="user.email" required></ion-input>
+    <ion-input  #email="ngModel" type="email" class="input" name="email" placeholder=" Enter your Email" id="email" [(ngModel)]="user.email" required></ion-input>
+    <div *ngIf="email.touched && email.invalid" class="alert alert-danger input">
+      This field is required</div>
     <ion-label class='label'>Password</ion-label>
     <ion-input type="text"  class="input" name="password" placeholder=" Enter password" id="password" [(ngModel)]="user.password" required></ion-input>
+
     <button type="submit" [disabled]="myForm.invalid">Login</button>
     <h3 class="titre">You don't have an account</h3>
     <button  routerLink="/inscription" >Register</button>
